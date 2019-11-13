@@ -35,11 +35,50 @@ pinMode(led_mi, OUTPUT);
 pinMode(led_ru, OUTPUT);
 pinMode(mot_lo, OUTPUT);
 pinMode(led_lo, OUTPUT);
-//selftest();
+selftest();
 }
 
+void loop(){
+randomloop(); 
+}
+
+
+void selftest(){
+brightness = 255;
+  analogWrite(led_ro, brightness);
+delay(3000); 
+  analogWrite(led_ro, 0);
+  analogWrite(mot_ro, brightness);
+delay(3000); 
+  analogWrite(mot_ro, 0);
+  analogWrite(led_ro, brightness);
+delay(3000); 
+  analogWrite(led_ro, 0);
+  analogWrite(mot_mi, brightness);
+delay(3000); 
+  analogWrite(mot_mi, 0);
+  analogWrite(mot_ru, brightness);
+delay(3000); 
+  analogWrite(mot_ru, 0);
+  analogWrite(led_mi, brightness);
+delay(3000); 
+  analogWrite(led_mi, 0);
+  analogWrite(led_ru, brightness);
+delay(3000); 
+  analogWrite(led_ru, 0);
+  analogWrite(mot_lo, brightness);
+delay(3000); 
+  analogWrite(mot_lo, 0);
+  analogWrite(led_lo, brightness);
+delay(3000); 
+  analogWrite(led_lo, 0);
+delay(6000); 
+
+}
+
+
 // the loop routine runs over and over again forever:
-void loop() {
+void randomloop() {
 // set the brightness of pin 9:
 
 if (counter < counterbreak) {

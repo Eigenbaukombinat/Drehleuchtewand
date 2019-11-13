@@ -38,14 +38,48 @@ pinMode(led_mi, OUTPUT);
 pinMode(led_ru, OUTPUT);
 pinMode(mot_lo, OUTPUT);
 pinMode(led_lo, OUTPUT);
-//selftest();
+selftest();
 }
+
+void loop(){
+randomloop(); 
+}
+
+void selftest(){
+brightness = 255;
+  analogWrite(led_ro, brightness);
+delay(3000); 
+  analogWrite(led_ro, 0);
+  analogWrite(mot_ro, brightness);
+delay(3000); 
+  analogWrite(mot_ro, 0);
+  analogWrite(led_ro, brightness);
+delay(3000); 
+  analogWrite(led_ro, 0);
+  analogWrite(mot_mi, brightness);
+delay(3000); 
+  analogWrite(mot_mi, 0);
+  analogWrite(mot_ru, brightness);
+delay(3000); 
+  analogWrite(mot_ru, 0);
+  analogWrite(led_mi, brightness);
+delay(3000); 
+  analogWrite(led_mi, 0);
+  analogWrite(led_ru, brightness);
+delay(3000); 
+  analogWrite(led_ru, 0);
+  analogWrite(mot_lo, brightness);
+delay(3000); 
+  analogWrite(mot_lo, 0);
+  analogWrite(led_lo, brightness);
+delay(3000); 
+  analogWrite(led_lo, 0);
+delay(6000); 
+
+}
+
 
 // the loop routine runs over and over again forever:
-
-void loop() {
-randomloop();
-}
 
 void randomloop() {
 // set the brightness of pin 9:
@@ -88,24 +122,3 @@ if (counter < counterbreak) {
 //  Serial.println(counter);
 }
 
-//
-//void selftest() {
-//  int LED;
-//  for (int allLED=0; allLED<LEDanzahl; LED=LED+1){
-//    brightness = 255;
-//    analogWrite(LED, brightness);
-//    Serial.print("LED");
-//    Serial.print(LED);
-//    delay(3000);
-//    analogWrite(LED, 0);
-//  }
-//  int MOT;
-//  for (int allMOT=0; allMOT<MOTanzahl; MOT=MOT+1){
-//    brightness = 255;
-//    analogWrite(MOT, brightness);
-//    Serial.print("Motor");
-//    Serial.print(MOT);
-//    delay(3000);
-//    analogWrite(MOT, 0);
-//  }
-//}

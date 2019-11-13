@@ -1,11 +1,14 @@
+// declare LED pins
 int led_ro = 2;
 int led_mi = 6;
 int led_ru = 7;
 int led_lo = 9;
+// declate Motor pins
 int mot_ro = 3;
 int mot_mi = 4;
 int mot_ru = 5;
 int mot_lo = 8;
+
 int pinrandom = random(2, 10);
 int counter = 0;
 int counterbreak = 500;
@@ -25,7 +28,7 @@ void setup() {
   while (!Serial) {   //waiting for the serial connection
   }
   Serial.println();
-  Serial.print("Fade chaos jotilux");
+  Serial.print("Starte Drehleuchtewand");
   // declare pin 9 to be an output:
 pinMode(led_ro, OUTPUT);
 pinMode(mot_ro, OUTPUT);
@@ -39,7 +42,12 @@ pinMode(led_lo, OUTPUT);
 }
 
 // the loop routine runs over and over again forever:
+
 void loop() {
+randomloop();
+}
+
+void randomloop() {
 // set the brightness of pin 9:
 
 if (counter < counterbreak) {
